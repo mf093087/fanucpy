@@ -44,10 +44,14 @@ Set up the ethernet connection with host and robot controller, then follow the b
 The FANUC MAPPDK server by default uses server tag **'S8:'** and port **18735**.
 1. Go to **MENU** ->**Next** -> **SYSTEM** -> **Variables**.
     * 1.1. Select **$HOSTS_CFG**.
+    
     ![image](https://user-images.githubusercontent.com/67538561/169284408-8736d381-c708-4422-989f-58de8743f9f2.png)
 
-    * 1.2. Select the number **8**.
-    * 1.3. Set the variable **$SERVER_PORT** to **18735**.??
+    * 1.2. Press enter to select the number **8**.
+    *
+    * 1.3. Once you enter into a new place, set the variable **$SERVER_PORT** to **18735**.
+    ![image](https://user-images.githubusercontent.com/67538561/169285678-88508464-2651-4f4c-8c15-52c67ccf9747.png)
+
 2. Go to **MENU** -> **SETUP** -> **Host Comm**.
     * 2.1. Select **SHOW** -> **Servers**.
     * 2.2. Select **S8**.
@@ -57,10 +61,15 @@ The FANUC MAPPDK server by default uses server tag **'S8:'** and port **18735**.
     * 2.6. Set **Current State** to **STARTED**:
         * Select **\[ACTION\]** -> **DEFINE**.
         * Select **\[Action\]** -> **START**.
+        ![image](https://user-images.githubusercontent.com/67538561/169286175-271bb666-d8c1-4415-a55d-89ab2a65ddf1.png)
+
 
 ## 3. Logger setup
 The FANUC MAPPDK logger by default uses server tag **'S7:'** and port **18736**.
 To setup the logger, follow the step for the FANUC MAPPDK server setup. Use **S7** as the server, and **18736** as the port number.
+![image](https://user-images.githubusercontent.com/67538561/169286578-fc57f24d-32bd-4620-a0f6-2fdd8814a149.png)
+
+
 
 ## 4. Running MAPPDK
 1. Copy the following files to a robot controller either using USB flash drive or FTP connection:
@@ -69,7 +78,9 @@ To setup the logger, follow the step for the FANUC MAPPDK server setup. Use **S7
     * **mappdk_logger.pc**: The MAPPDK logger file.
     * **mappdk_move.ls**: The MAPPDK move file.
     * **mappdk_movel.ls**: The MAPPDK linear move file.
-2. In TP:
+   ![image](https://user-images.githubusercontent.com/67538561/169286670-c283a061-9c50-4e21-b844-961c014b33d1.png)
+
+2. In the teach pendant:
     * 2.1. Press **SELECT**.
     * 2.2. Locate **MAPPDK**.
     * 2.3. Run in **T1/T2** or **AUTO** mode.
@@ -83,4 +94,7 @@ To setup the logger, follow the step for the FANUC MAPPDK server setup. Use **S7
 ## 6. Troubleshooting
 In case of error or hanging python script:
 1. Select **FCTN** -> **ABORT ALL**.
+
+![4](https://user-images.githubusercontent.com/67538561/169287126-a808bb14-61ae-4124-a4db-961fb6c7f8f7.png)
+
 2. Re-run the **MAPPDK**. 
