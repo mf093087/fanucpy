@@ -6,27 +6,48 @@ Fanuc controllers must have the following modules enabled:
 - R648 - User Socket Messaging
 
 Check the compatibility:
-1. Go to **MENU** -> **STATUS** -> **Version ID**.
-2. Click **ORDER FI**.
-3. Check for **R632** and **648** in the list.
+1. Go to **MENU** -> **NEXT** -> **STATUS** -> **Version ID**.
+![image](https://user-images.githubusercontent.com/67538561/169281756-e59e61af-3a40-4c8a-aa00-94123f3ba3e3.png)
+
+3. Click **ORDER FI**.
+![image](https://user-images.githubusercontent.com/67538561/169282210-865d139e-1bad-4598-80c0-086461c159a6.png)
+
+4. Check for **R632** and **648** in the list.
+![image](https://user-images.githubusercontent.com/67538561/169282483-d85084dc-d572-4bbf-9d5d-dc9057802e01.png)
+
+For roboguide software, there are two possibilities. 
+1. The roboguide cell is already existing, now we need to update the robot options to install R632 and R648. Then use the instructions below to serailize the robot and install the R632 and R648 package.  
+![image](https://user-images.githubusercontent.com/67538561/169279461-eec2fbec-18d1-46f2-81e9-903dcdb88ba6.png)
+
+Then you will enter the virtual robot edit wizard to install the R632 and R648
+![image](https://user-images.githubusercontent.com/67538561/169279787-9e8fac9b-9e72-42d5-8d6e-abfe48e7aec0.png)
+
+2. It is a new workcell, which means you can install the R632 and R648 at the very first begining. 
 
 ## 1. Network connection
 Set up the ethernet connection with host and robot controller, then follow the below steps:
 1. Go to **MENU** -> **SETUP** -> **Host Comm**.
-2. Set the **Robot name**.
-3. Set the **IP addr** to **192.168.1.100** or IP in the same subnet as the host computer. This is the IP address of the robot controller.
+![3](https://user-images.githubusercontent.com/67538561/169283076-5172b547-660e-42f0-9447-cb79ed5f114f.png)
+
+2. Go to **TCP/IP**
+3. Set the **Robot name**, the **IP addr** to **192.168.1.100** or IP in the same subnet as the host computer. This is the IP address of the robot controller.
+
 4. Set the **Subnet Mask** to **255.255.255.0**.
 5. Set **Host Name** and **Internet Address**. This is the IP address of the host computer.
+![image](https://user-images.githubusercontent.com/67538561/169283497-e25bc159-74ef-43d2-b2fe-008b5076b062.png)
+
 6. Disable DHCP: **DHCP** -> **DHCP Enable**: **False**.
 7. Activate the above settings by pressing **INIT**.
 
 
 ## 2. Server setup
 The FANUC MAPPDK server by default uses server tag **'S8:'** and port **18735**.
-1. Go to **MENU** -> **SYSTEM** -> **Variables**.
+1. Go to **MENU** ->**Next** -> **SYSTEM** -> **Variables**.
     * 1.1. Select **$HOSTS_CFG**.
+    ![image](https://user-images.githubusercontent.com/67538561/169284408-8736d381-c708-4422-989f-58de8743f9f2.png)
+
     * 1.2. Select the number **8**.
-    * 1.3. Set the variable **$SERVER_PORT** to **18735**.
+    * 1.3. Set the variable **$SERVER_PORT** to **18735**.??
 2. Go to **MENU** -> **SETUP** -> **Host Comm**.
     * 2.1. Select **SHOW** -> **Servers**.
     * 2.2. Select **S8**.
